@@ -1,7 +1,7 @@
 FROM python:3.12-slim
 
 RUN apt-get -qq update && \
-    apt-get -qq install --yes --no-install-recommends libgl1-mesa-glx libglu1-mesa libxrender-dev gettext-base less unzip git > /dev/null && \
+    apt-get install --yes --no-install-recommends libgl1 libglu1-mesa && \
     apt-get -qq purge && \
     apt-get -qq clean && \
     rm -rf /var/lib/apt/lists/*
